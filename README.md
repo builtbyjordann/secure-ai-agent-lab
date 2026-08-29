@@ -93,6 +93,8 @@ The Level 12 rule triggers after three matching events within 60 seconds.
 
 ## Live Validation
 
+![Wazuh Level 12 Alert](screenshots/wazuh-level-12-alert.png)
+
 The detection chain was validated through the real application rather than only through simulated SIEM input.
 
 A request for `vacation.txt` caused the embedded prompt injection to instruct the agent to retrieve `payroll.txt`.
