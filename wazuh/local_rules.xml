@@ -1,0 +1,23 @@
+<!-- Custom Wazuh detection rules for the Secure AI Agent SOC Lab -->
+
+<group name="ai_security,">
+
+  <rule id="100101" level="8">
+    <match>result=DENIED</match>
+    <description>AI application authorization denied</description>
+  </rule>
+
+  <rule id="100102" level="10">
+    <decoded_as>ai-security-log</decoded_as>
+    <field name="result">DENIED</field>
+    <field name="requested_document">payroll.txt</field>
+    <description>AI agent attempted unauthorized access to sensitive payroll data</description>
+  </rule>
+
+  <rule id="100103" level="12" frequency="3" timeframe="60">
+    <if_matched_sid>100102</if_matched_sid>
+    <same_field>ai_user</same_field>
+    <description>Repeated unauthorized AI access attempts to sensitive payroll data</description>
+  </rule>
+
+</group>

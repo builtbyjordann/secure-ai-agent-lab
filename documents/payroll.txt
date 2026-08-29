@@ -1,0 +1,3 @@
+Executive payroll:
+CEO salary: $850,000
+CFO salary: $620,000

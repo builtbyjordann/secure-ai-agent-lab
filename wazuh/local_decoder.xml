@@ -1,0 +1,7 @@
+<!-- Custom decoder for Secure AI Agent security events -->
+
+<decoder name="ai-security-log">
+  <prematch>user=</prematch>
+  <regex type="pcre2">user=(\d+) \| requested=([^|]+) \| result=(\w+)</regex>
+  <order>ai_user,requested_document,result</order>
+</decoder>
